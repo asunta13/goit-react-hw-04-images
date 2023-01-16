@@ -60,7 +60,7 @@ export const App = () => {
     setQuery(searchQuery);
   };
 
-  const showModal = modalImg => setModalImg(modalImg);
+  const onSelect = modalImg => setModalImg(modalImg);
 
   const hideModal = () => setModalImg({});
 
@@ -69,7 +69,7 @@ export const App = () => {
       <AppStyled>
         <Searchbar onSubmit={searchImage} />
         {images.length > 0 && (
-          <ImageGallery images={images} onSelect={showModal} />
+          <ImageGallery images={images} onSelect={onSelect} />
         )}
         {images.length > 11 && !isLoading && <Button onClick={loadMore} />}
         {isLoading && <Loader />}
